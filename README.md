@@ -1,26 +1,10 @@
 # 🕵️ Android Network Spy
 
-Rust CLI to analyze Android network traffic dumps. Parse pcap files, find suspicious domains, aggregate by app.
+Monitor and log all network traffic from Android devices — DNS queries, HTTP/HTTPS requests, open connections.
 
-## Usage
+## Tools
 
-```bash
-# Capture on device
-adb shell tcpdump -i any -w /sdcard/capture.pcap
-
-# Pull and analyze
-adb pull /sdcard/capture.pcap
-cargo run -- capture.pcap
-
-# Find domains
-cargo run -- capture.pcap --domains
-
-# Top talkers
-cargo run -- capture.pcap --top 10
-```
-
-## Requirements
-```bash
-cargo install pcap
-rustc 1.70+
-```
+- `dns_monitor.py` — Log all DNS queries in real time
+- `http_intercept.py` — Capture HTTP/HTTPS traffic (requires cert install)
+- `connection_tracker.py` — Real-time TCP/UDP connection monitor
+- `traffic_stats.py` — Per-app bandwidth usage analysis
